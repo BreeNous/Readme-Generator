@@ -20,11 +20,6 @@ inquirer
         },
         {
             type: 'input',
-            message: '',
-            name: 'table of contents',
-        },
-        {
-            type: 'input',
             message: 'What are the steps required to install your project?',
             name: 'installation',
         },
@@ -51,23 +46,63 @@ inquirer
         },
         {
             type: 'input',
-            message: 'idk what to put for this',
-            name: 'questions',
+            message: 'What is your GitHub username? Including this will help if someone wants to checkout your work.',
+            name: 'question1',
+        },
+        {
+            type: 'input',
+            message: 'Include a link to your GitHub for easier access',
+            name: 'question2',
+        },
+        {
+            type: 'input',
+            message: 'What is your email? Including this will help if someone wants to get in contact with you.',
+            name: 'question3',
         },
     ])
+// TODO: Create a function to write README file
     .then((response) => {
         let README = `
         # ${response.title}
 
-        ## Description:
-        
+        ## Description
         > ${response.description}
 
+        ## Table of Contents:
+        - Description
+        - Installation
+        - Usage
+        - Credits
+        - Lisence
+        - Tests
+        - Questions
+
+        ## Installation
+        > ${response.installation}
+
+        ## Usage
+        > ${response.usage}
+
+        ## Credits
+        > ${response.credits}
+
+        ## Lisence
+        > ${response.choices}
+
+        ## Tests
+        > ${response.tests}
+
+        ## Questions?
+        > Find me on GitHub at ${response.question1} or follow this link ${response.question2}
+        > Contact me at ${response.question3}
         `
+
+        fs.writeFile(`README.md`, README, (err) =>
+        err ? console.error(err) : console.log('success'))
     });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+
+
 
 // TODO: Create a function to initialize app
 function init() {}
