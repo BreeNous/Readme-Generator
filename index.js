@@ -37,7 +37,7 @@ function init() {
                 type: 'list',
                 message: 'What license did you use for your project?',
                 name: 'license',
-                choices: ['Apache_2.0', 'GPL_v.3', 'MIT', 'BSD_2-Clause', 'BSD_3-Clause', 'Boost_1.0', 'CC0', 'EPL_2.0', 'AGPL_v3', 'GPL_v2', 'LGPL_v2.1', 'MPL_2.0', 'Unlicense', 'none']
+                choices: ['Apache_2.0', 'GPL_3.0', 'MIT', 'BSD_2_Clause', 'BSD_3_Clause', 'Boost_1.0', 'CC0', 'EPL_2.0', 'AGPL_3.0', 'GPL_2.0', 'LGPL_2.1', 'MPL_2.0', 'Unlicense', 'none']
             },
             {
                 type: 'input',
@@ -71,13 +71,13 @@ ${response.description}
 
 ## Table of Contents:
 
-- Description
-- Installation
-- Usage
-- Credits
-- License
-- Tests
-- Questions
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
@@ -94,6 +94,7 @@ ${response.credits}
 ## License
 
 ${response.license}
+
 ${generateMarkdown(response.license)}
 
 ## Tests
